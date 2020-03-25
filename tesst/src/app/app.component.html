@@ -1,0 +1,11 @@
+<label>File</label><hr>
+<div class="row">
+  <div class="mx-3 my-3" *ngFor="let file of files; let i = index">
+    <app-upload-img [file]="file" [index]="i" class="mx-auto d-block" (deleteImage)="deleteAttachment($event)"
+                    (outputLinkURL)="pushUrlToList($event)">
+    </app-upload-img>
+  </div>
+</div>
+<label class="btn btn-primary">
+<input type="file" name="file" id="file" (change)="uploadFile($event.target.files)" multiple hidden>
+Choose a file</label>
